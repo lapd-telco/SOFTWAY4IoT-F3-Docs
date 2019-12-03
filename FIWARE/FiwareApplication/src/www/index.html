@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fiware App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./assets/js/sendCommand.js"></script>
+</head>
+<body>
+  <nav class="navbar bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">Fiware Application</a>
+  </nav>
+  
+  <div class="alert alert-success" id="success-alert"> 
+    <strong>Success!</strong> the command has been sent successfully.
+  </div>
+    
+  <div class="alert alert-danger" id="error-alert"> 
+    <strong>Error!</strong> command request error.
+  </div>
+
+  <div class="jumbotron text-center">
+    <h1>FiwareApp</h1>
+    <p>Interact with IoT devices</p> 
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 mt-2">
+          <div class="brand-card">
+              <div class="brand-card-header">
+                  <img src="./assets/img/sensor.png">
+              </div>
+              </br>
+              </br>
+              <div class="brand-card-body">
+                <div>
+                  <div id="sensorprevious"class="text-value">---</div>
+                  <div class="text-uppercase text-muted small">previous reading</div>
+                </div>
+                <div>
+                  <div id="sensorcurrent" class="text-value">---</div>
+                  <div class="text-uppercase text-muted small">current reading</div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-sm-6 mt-2">
+          <div class="brand-card">
+              <div class="brand-card-header">
+                <img src="./assets/img/servo.png">
+              </div>
+              </br>
+              </br>
+              <div class="brand-card-body">
+                <div class="my-auto">
+                  <button type="button" id="btncmd" class="btn btn-outline-dark btn-lg" onclick='sendCommand()'><div class="text small">Activate Servo</div></button>
+                </div>
+                <div>
+                  <div id="servoresult" class="text-value">---</div>
+                  <div class="text-uppercase text-muted small">Command Result</div>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+
+    $("#success-alert").hide();
+    $("#error-alert").hide();
+
+    var socket = io('http://' + window.location.hostname + ':5600');
+    
+    socket.on('receiveCommandResult', function(commandResult){
+      document.getElementById("servoresult").innerHTML = commandResult.mover_info;    
+    });
+
+    socket.on('receiveMeasurementResult', function(measurementResult){
+      document.getElementById("sensorprevious").innerHTML = document.getElementById('sensorcurrent').innerHTML;
+      document.getElementById("sensorcurrent").innerHTML = measurementResult.distance + "cm";    
+    });
+
+  </script>
+</body>
+</html>
