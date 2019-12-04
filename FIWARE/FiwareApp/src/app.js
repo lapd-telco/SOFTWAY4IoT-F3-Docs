@@ -7,7 +7,7 @@ const server = require('http').createServer(app);
 const io = require('socket.io')(server); 
 const config = require('../config');
 
-//Default headers for all devices
+//Default service and subservice for all devices
 const fiwareServiceHeaders = {
 	"Fiware-service": "sw4iotservice",
 	"Fiware-servicePath": "/sw4iot"
@@ -16,10 +16,12 @@ const fiwareServiceHeaders = {
 //Configure a static server for the client files (front-end files)
 app.use(express.static( path.join(__dirname + '/www' )));
 
+//Send the www/ files to front-end
 app.get('/', function (req, res) {
 	res.sendFile( path.join( __dirname, 'www/'))
 });
 
+//Print id of Every socket created 
 io.on('connection', function (socket) {
 	console.log(`Socket conectado: ${socket.id}`)
 });
@@ -31,31 +33,35 @@ app.post('/measurementresult', function (req, res) {
         url: 'http://' + config.orion.host + ':' + config.orion.port + '/v2/entities/urn:ngsi-ld:Thing:' + config.devices.ultrasonic.id + '/attrs/' + config.devices.ultrasonic.attribute + '?type=Thing&options=keyValues',
         method: 'GET'
 	};
-
+	//Make a HTTP GET request
 	axios(requestOptions)
-		.then(function (response) {	
+		.then(function (response) {
+			//Print the ORION response in terminal
 			console.log(response.data)
+			//Send the response for all sockets connected
 			io.sockets.emit('receiveMeasurementResult', response.data);		
 		})
 		.catch(function (error) {
 			console.log(error)		
 			//res.status(error.response.status).send(error.response.data);
 		});
-		//Envia confirmação ao Orion
+		//Send confirmation to ORION
 		res.status(200).send();
 }); 
 
-//Obtain command result making a request to ORION after receive a update notification from ORION
+//Obtain command result making a request to ORION
 app.post('/commandresult', function (req, res) {
     var requestOptions = {
         headers: fiwareServiceHeaders,
         url: 'http://' + config.orion.host + ':' + config.orion.port + '/v2/entities/urn:ngsi-ld:Thing:' + config.devices.servo.id + '/attrs/' + config.devices.servo.command + '_info?type=Thing&options=keyValues',
         method: 'GET'
 	};
-	
+	//Make a HTTP GET request
 	axios(requestOptions)
-		.then(function (response) {	
+		.then(function (response) {
+			//Print the ORION response in terminal
 			console.log(response.data);
+			//Send the response for all sockets connected
 			io.sockets.emit('receiveCommandResult', response.data);
 			
 		})
@@ -63,7 +69,7 @@ app.post('/commandresult', function (req, res) {
 			console.log(error)		
 			//res.status(error.response.status).send(error.response.data);
 		});
-		//Envia confirmação ao Orion
+		//Send confirmation to ORION
 		res.status(200).send();
 }); 
 
