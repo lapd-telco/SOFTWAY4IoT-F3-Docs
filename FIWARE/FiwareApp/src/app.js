@@ -73,7 +73,7 @@ app.post('/commandresult', function (req, res) {
 		res.status(200).send();
 }); 
 
-//Send command request to ORION after the button click in front-end
+//Send command request to ORION after the button click in front-end (updateContext)
 app.post('/sendcommand', function (req, res) {
     var requestOptions = {
         headers: fiwareServiceHeaders,
@@ -97,9 +97,10 @@ app.post('/sendcommand', function (req, res) {
 			"updateAction": "UPDATE"
 		} 
 	}
-	
+	//Make a HTTP POST request
 	axios(requestOptions)
 		.then(function (response) {
+			//Print the ORION response in terminal
 			console.log(response.data.contextResponses);
 			res.status(response.status).send(response.data.contextResponses[0].statusCode);
 		})
