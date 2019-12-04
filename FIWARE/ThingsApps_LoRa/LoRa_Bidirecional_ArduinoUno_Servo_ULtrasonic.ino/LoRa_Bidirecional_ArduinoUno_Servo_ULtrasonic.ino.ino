@@ -75,6 +75,7 @@ void loop() {
   // get the atual time
   unsigned long currentTime = millis();
   
+  //Activate the sensor (10 second interval)
   if((currentTime-previousTime)>=interval){
     distance = getDistance();
     Serial.print("Distance: ");
