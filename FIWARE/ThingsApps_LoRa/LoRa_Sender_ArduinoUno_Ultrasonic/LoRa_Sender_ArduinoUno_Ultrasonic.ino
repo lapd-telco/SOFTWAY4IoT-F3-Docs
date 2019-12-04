@@ -32,9 +32,9 @@ void setup() {
 int getDistance()
 {
     int distanceCM;
-    //faz a leitura das informacoes do sensor (em cm)
+    //obtem a leitura sensor em microsegundos
     long microsec = ultrasonic.timing();
-    // convert the timming co 
+    // convert the timming em cm
     distanceCM = ultrasonic.convert(microsec, Ultrasonic::CM);
   
     return distanceCM;
