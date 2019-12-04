@@ -3,6 +3,7 @@
 #include <LoRa.h>
 
 Servo myservo;
+//board pin (arduinoUno)
 static const int servoPin = 7;
 
 void setup() {
