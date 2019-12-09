@@ -12,3 +12,6 @@
 </div>
 ### Arquitetura 
 ![](/FIWARE/Images/DistribuiçãoDosComponentes.png)
+
+
+
