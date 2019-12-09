@@ -18,7 +18,7 @@
 
 ### Componentes SOFTWAY4IoT
   #### SW4IoT_FIWARE_Manager
-
+O SW4IoT_FIWARE_Manager é o componente responsável pelo gerenciamento de dispositivos junto ao IoT Agent, o qual provê uma API RESTful para esse gerenciamento. Através desse componente é possível realizar as seguintes operações: registrar um novo dispositivo, alterar, excluir e obter informações de dispositivos já registrados. Ele atua encaminhando os dados informados via interface Web do WebSM para o registro no IoT Agent
 
 
 
