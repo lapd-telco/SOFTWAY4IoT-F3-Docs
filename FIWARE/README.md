@@ -23,11 +23,15 @@ O SW4IoT_FIWARE_Manager é o componente responsável pelo gerenciamento de dispo
 ### WebSM
 O WebSM é a ferramenta de administração do SOFTWAY4IoT para múltiplos gateways IoT, a qual possibilita criar slices (fatias de recursos), associá-los aos gateways, além de adicionar, editar e remover dispositivos de comunicação sem fio e aplicações associadas às slices
 
-## Drivers
+### Drivers
 Os drivers são responsáveis por lidar com as especificidades dos protocolos de comunicação sem fio que não implementam toda a pilha TCP/IP e, por essa razão, não conseguem estabelecer comunicação diretamente com a internet. Para que o processo de comunicação aconteça, faz-se necessário a existência de um elemento intermediário ( driver ). Esse elemento é o responsável por realizar o processo de tradução entre o protocolo de comunicação original do dispositivo e o TCP/IP (padrão de comunicação para a Internet).
 
-## devicesApp FIWARE
-Na plataforma FIWARE, existe um IoT Agent específico para lidar com as particularidades de cada protocolo. Como os drivers do SOFTWAY4IoT já desempenham essa função, optamos por utilizá-los, eliminando a necessidade de incluir na arquitetura um IoT Agent para cada tipo de protocolo. Assim, a devicesApp foi desenvolvida para intermediar a comunicação entre os dispositivos via driver e o IoT Agent da FIWARE, atuando no repasse de comandos provenientes do IoT Agent destinados aos dispositivos IoT atuadores e no repasse de medições geradas por dispositivos IoT sensores destinadas ao IoT Agent
+### devicesApp FIWARE
+Na plataforma FIWARE, existe um IoT Agent específico para lidar com as particularidades de cada protocolo. Como os drivers do SOFTWAY4IoT já desempenham essa função, optamos por utilizá-los, eliminando a necessidade de incluir na arquitetura um IoT Agent para cada tipo de protocolo. Assim, a devicesApp foi desenvolvida para intermediar a comunicação entre os dispositivos via driver e o IoT Agent da FIWARE, atuando no repasse de comandos provenientes do IoT Agent destinados aos dispositivos IoT atuadores e no repasse de medições geradas por dispositivos IoT sensores destinadas ao IoT Agent.
+
+# Componentes FIWARE
+### ORION Context Broker
+ORION é responsável pelo gerenciamento de dados de contexto das aplicações que utilizam a plataforma FIWARE, disponibilizando serviços de consulta e atualização desses dados através de uma API NGSI. Existem apenas dois tipos possíveis de interações de dados entre IoT Agent e ORION: as interações queryContext e updateContext. A queryContext é utilizada para operações de consulta e a updateContext para operações de atualização. Nessa integração, o ORION será utilizado para o gerenciamento de dados gerados por dispositivos IoT devidamente registrados no SOFTWAY4IoT, sejam eles sensores ou atuadores. Não foi necessário realizar mudanças no ORION para a integração.
 
 
 
