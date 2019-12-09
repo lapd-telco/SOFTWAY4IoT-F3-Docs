@@ -17,8 +17,11 @@
 <p>O processo de integração é realizado através de um conjunto de interações entre componentes específicos da FIWARE e do SOFTWAY4IoT. A Figura acima apresenta a arquitetura proposta para essa integração, exibindo as interações entre os componentes ORION, IoT Agent e o MongoDB (todos da FIWARE), e os componentes WebSM, SW4IoT_FIWARE_Manager, devicesApp FIWARE e os diferentes drivers de protocolo utilizados para comunicação com dispositivos IoT (do SOFTWAY4IoT). As seções a seguir apresentam em detalhes as características de cada um desses componentes.</p>
 
 # Componentes SOFTWAY4IoT
-  ### SW4IoT_FIWARE_Manager
+### SW4IoT_FIWARE_Manager
 O SW4IoT_FIWARE_Manager é o componente responsável pelo gerenciamento de dispositivos junto ao IoT Agent, o qual provê uma API RESTful para esse gerenciamento. Através desse componente é possível realizar as seguintes operações: registrar um novo dispositivo, alterar, excluir e obter informações de dispositivos já registrados. Ele atua encaminhando os dados informados via interface Web do WebSM para o registro no IoT Agent
+
+### WebSM
+O WebSM é a ferramenta de administração do SOFTWAY4IoT para múltiplos gateways IoT, a qual possibilita criar slices (fatias de recursos), associá-los aos gateways, além de adicionar, editar e remover dispositivos de comunicação sem fio e aplicações associadas às slices
 
 
 
