@@ -41,6 +41,8 @@ Para que um dispositivo possa receber comandos ou enviar medições, é necessá
 
 Na integração entre FIWARE e SOFTWAY4IoT, a comunicação com os dispositivos IoT será realizada de acordo com a tecnologia de comunicação utilizada pelos mesmos. Para os dispositivos que utilizam tecnologias de comunicação que implementam toda a pilha TCP/IP, e.g., Wi-Fi e Ethernet, o processo de comunicação será realizado diretamente entre o respectivo dispositivo e o IoT Agent. Para esses casos, não é necessário a utilização do nenhum mecanismo para interfacear a comunicação, pois os respectivos dispositivos possuem a capacidade de atender as requisições HTTP de forma direta. Para os dispositivos que utilizam tecnologias de comunicação que não implementam toda a pilha TCP/IP, e.g., Lora, Zigbee, nRF24, o processo de comunicação será realizado através da utilização de um agente intermediário, responsável por interfacear a comunicação entre o respectivo dispositivo e o IoT Agent. Nesse cenário, a devicesApp e os drivers, serão os responsáveis por intermediar o processo de comunicação, realizando a tradução entre o protocolo original do dispositivo e o HTTP.
 
+### Envio de Comandos - Tráfego Southbound
+
 
 
 
