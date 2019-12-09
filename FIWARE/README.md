@@ -18,7 +18,7 @@
 
 # Componentes SOFTWAY4IoT
 ### SW4IoT_FIWARE_Manager
-O SW4IoT_FIWARE_Manager é o componente responsável pelo gerenciamento de dispositivos junto ao IoT Agent, o qual provê uma API RESTful para esse gerenciamento. Através desse componente é possível realizar as seguintes operações: registrar um novo dispositivo, alterar, excluir e obter informações de dispositivos já registrados. Ele atua encaminhando os dados informados via interface Web do WebSM para o registro no IoT Agent
+O SW4IoT_FIWARE_Manager é o componente responsável pelo gerenciamento de dispositivos junto ao IoT Agent, o qual provê uma API RESTful para esse gerenciamento. Através desse componente é possível realizar as seguintes operações: registrar um novo dispositivo, alterar, excluir e obter informações de dispositivos já registrados. Atua no encaminhamento dos dados informados via interface Web do WebSM para o registro no IoT Agent
 
 ### WebSM
 O WebSM é a ferramenta de administração do SOFTWAY4IoT para múltiplos gateways IoT, a qual possibilita criar slices (fatias de recursos), associá-los aos gateways, além de adicionar, editar e remover dispositivos de comunicação sem fio e aplicações associadas às slices
@@ -31,7 +31,16 @@ Na plataforma FIWARE, existe um IoT Agent específico para lidar com as particul
 
 # Componentes FIWARE
 ### ORION Context Broker
-ORION é responsável pelo gerenciamento de dados de contexto das aplicações que utilizam a plataforma FIWARE, disponibilizando serviços de consulta e atualização desses dados através de uma API NGSI. Existem apenas dois tipos possíveis de interações de dados entre IoT Agent e ORION: as interações queryContext e updateContext. A queryContext é utilizada para operações de consulta e a updateContext para operações de atualização. Nessa integração, o ORION será utilizado para o gerenciamento de dados gerados por dispositivos IoT devidamente registrados no SOFTWAY4IoT, sejam eles sensores ou atuadores. Não foi necessário realizar mudanças no ORION para a integração.
+ORION é responsável pelo gerenciamento de dados de contexto das aplicações que utilizam a plataforma FIWARE, disponibilizando serviços de consulta e atualização desses dados através de uma API REST. Existem apenas dois tipos possíveis de interações de dados entre IoT Agent e ORION: as interações queryContext e updateContext. A queryContext é utilizada para operações de consulta e a updateContext para operações de atualização. Nessa integração, o ORION será utilizado para o gerenciamento de dados gerados por dispositivos IoT devidamente registrados no SOFTWAY4IoT, sejam eles sensores ou atuadores. Não foi necessário realizar mudanças no ORION para a integração.
+### IoT Agent
+IoT Agent é responsável por intermediar a comunicação entre dispositivos IoT e ORION, traduzindo os dados de diferentes tipos de protocolo para para o formato NGSI, o qual é utilizado pelo ORION em todas suas interações. Nessa integração, será utilizado o IoT Agent for JSON, o qual atua como uma ponte entre o protocolo JSON e o NGSI. 
+
+O tráfego que flui através do IoT Agent é dividido em dois tipos: tráfego Southbound e Northbound. Todo tráfego gerado pelo ORION em direção a um dispositivo atuador é chamado de tráfego Southbound, que consiste no envio de requisições de comando geradas pelo ORION em direção a um dispositivo IoT. O tráfego Northbound consiste no envio de medições geradas por sensores em direção ao ORION.
+
+Para que um dispositivo possa receber comandos ou enviar medições, é necessário registrá-lo no IoT Agent. A esse processo dá-se o nome de provisionamento. Ao registar um dispositivo, seja um sensor ou atuador, devemos informar: o seu ID; sua entidade de dados, que é a forma como um dispositivo é representado dentro da plataforma FIWARE; o tipo da entidade; os atributos que correspondem ao valor de leitura de cada sensor e os comandos disponíveis para cada atuador, sendo também necessário informar o endpoint (URL) no qual o dispositivo está atendendo à requisições.
+
+Na integração entre FIWARE e SOFTWAY4IoT, a comunicação com os dispositivos IoT será realizada de acordo com a tecnologia de comunicação utilizada pelos mesmos. Para os dispositivos que utilizam tecnologias de comunicação que implementam toda a pilha TCP/IP, e.g., Wi-Fi e Ethernet, o processo de comunicação será realizado diretamente entre o respectivo dispositivo e o IoT Agent. Para esses casos, não é necessário a utilização do nenhum mecanismo para interfacear a comunicação, pois os respectivos dispositivos possuem a capacidade de atender as requisições HTTP de forma direta. Para os dispositivos que utilizam tecnologias de comunicação que não implementam toda a pilha TCP/IP, e.g., Lora, Zigbee, nRF24, o processo de comunicação será realizado através da utilização de um agente intermediário, responsável por interfacear a comunicação entre o respectivo dispositivo e o IoT Agent. Nesse cenário, a devicesApp e os drivers, serão os responsáveis por intermediar o processo de comunicação, realizando a tradução entre o protocolo original do dispositivo e o HTTP.
+
 
 
 
