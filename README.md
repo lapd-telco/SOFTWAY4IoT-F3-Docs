@@ -17,4 +17,4 @@
   - 7896 (porta sul): utilizada para o envio de medições geradas por dispositivos IoT.
 
 <p>Os dois componentes da FIWARE descritos acima utilizam uma instância do gerenciador de banco de dados MongoDB para persistência de dados. Sendo utilizado pelo ORION para armazenar dados de contexto gerados por aplicações e/ou dispositivos, e pelo IoT Agent para armazenar informações sobre dispositivos IoT.<p>
-
+</div>
