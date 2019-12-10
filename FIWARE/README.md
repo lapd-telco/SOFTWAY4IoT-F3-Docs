@@ -44,7 +44,7 @@ Na integração entre FIWARE e SOFTWAY4IoT, a comunicação com os dispositivos 
 Originalmente, na plataforma FIWARE, ao enviar um comando, o IoT Agent realiza uma requisição HTTP POST ao endpoint do dispositivo e fica aguardando pela resposta. A resposta em questão, consiste em um JSON com o resultado da requisição. O resultado é então encaminhado ao ORION para persistência.
 
 ```
-//distance é nome do atributo registrado para o dispositivo via WebSM
+//distance é nome do atributo registrado para o dispositivo (sensor) via WebSM
 {"distance": 28} 
 ```
 
