@@ -44,7 +44,7 @@ Na integração entre FIWARE e SOFTWAY4IoT, a comunicação com os dispositivos 
 Originalmente, na plataforma FIWARE, ao enviar um comando, o IoT Agent realiza uma requisição HTTP POST ao endpoint do dispositivo e fica aguardando pela resposta. A resposta em questão, consiste em um JSON com o resultado da requisição. O resultado é então encaminhado ao ORION para persistência.
 
 ```
-{"distance": dist}
+{"distance": 28}
 ```
 
 O fluxo é iniciado com o envio de uma requisição de atualização (updateContext) ao ORION solicitando a atualização para o resultado de um comando. O ORION então encaminhará a carga útil (payload) dessa requisição para o IoT Agent. Caso o IoT Agent aceite o comando, ele enviará um código HTTP 200 como resposta ao ORION. Essa resposta é encaminhada à aplicação de usuário que iniciou a interação. Essa primeira requisição tem por objetivo apenas iniciar o processo de envio de comandos em segundo plano no IoT Agent. A partir desse ponto, o fluxo segue caminhos distintos, de acordo com a tecnologia de comunicação utilizada pelo respectivo dispositivo envolvido no processo de comunicação. Maiores detalhes podem ser observados nas Seções 5.1 e 5.2.
