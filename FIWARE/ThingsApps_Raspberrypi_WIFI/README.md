@@ -1,4 +1,4 @@
-# Aplicaçoẽs de exemplo - Raspberry PI 
+# Aplicaçoẽs de exemplo - Raspberry Pi 
 Nesse repositório há duas simples aplicações de exemplo, as quais foram desenvolvidas para teste: 
  * Uma aplicação que ativa um motor servo ao receber uma requisição de comando proveniente do IoT Agent
  * Uma aplicação que envia as medições coletadas por um sensor ultrasônico ao IoT Agent
