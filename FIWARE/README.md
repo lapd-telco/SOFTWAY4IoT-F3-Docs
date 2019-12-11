@@ -1,4 +1,4 @@
-# Table of Contents
+# Índice
 1. [Introdução](#introdução)
 2. [Arquitetura](#arquitetura)
 3. [Third Example](#third-example)
