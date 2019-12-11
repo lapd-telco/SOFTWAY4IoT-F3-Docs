@@ -73,17 +73,9 @@ A comunicação com os dispositivos que utilizam tecnologias de comunicação qu
 Para que a devicesApp saiba para qual dispositivo o comando deve ser encaminhado, foi necessário realizar uma alteração no código fonte do IoT Agent, fazendo com que ao enviar uma requisição de comando, o IoT Agent passe como um parâmetro na requisição o ID do dispositivo a ser acionado. Com esse ID, a devicesApp enviará o comando  ao dispositivo através de seu respectivo driver. Ao receber o resultado para o comando proveniente do dispositivo, a devicesApp o encaminhará ao IoT Agent através de um JSON, da mesma forma que um dispositivo compatível com o IoT Agent for JSON faria.
 
 ### 6.	Envio de medições - Tráfego Northbound
-Originalmente na plataforma FIWARE, uma aplicação que gerencia um sensor obteria uma medição e a enviaria ao IoT Agent através de uma requisição HTTP, informando o ID do dispositivo, a API KEY, o atributo para qual o resultado da medição será associado e o resultado da medição. A API Key é necessária para autenticação dos dispositivos, podendo ser definida uma única API Key global no arquivo de configuração do IoT Agent. Alternativamente, é possível fornecer uma API Key ao criar um serviço, o que consiste em criar grupos individuais de dispositivos associados a um determinado contexto, podendo definir uma API Key para cada grupo. <span style="color:red">Obs: nesta versão, não há suporte a criação de serviços. Caso seja necessário, esse recurso será incluso em uma próxima versão.</span>
-
-<span style="color: red">written in red</span>.
-
-
-
+Originalmente na plataforma FIWARE, uma aplicação que gerencia um sensor obteria uma medição e a enviaria ao IoT Agent através de uma requisição HTTP, informando o ID do dispositivo, a API KEY, o atributo para qual o resultado da medição será associado e o resultado da medição. A API Key é necessária para autenticação dos dispositivos, podendo ser definida uma única API Key global no arquivo de configuração do IoT Agent. Alternativamente, é possível fornecer uma API Key ao criar um serviço, o que consiste em criar grupos individuais de dispositivos associados a um determinado contexto, podendo definir uma API Key para cada grupo.
 ```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
+- Obs: nesta versão, não há suporte a criação de serviços. Caso seja necessário, esse recurso será incluso em uma próxima versão.
 ```
 
 
