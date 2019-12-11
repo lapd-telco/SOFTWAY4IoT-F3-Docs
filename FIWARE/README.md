@@ -1,4 +1,5 @@
 # Índice
+
 1. [Introdução](#Introdução)
 2. [Arquitetura](#Arquitetura)
 3. [Componentes SOFTWAY4IoT](#Componentes-SOFTWAY4IoT)
@@ -14,9 +15,8 @@
    * 5.2. [Envio de comandos para dispositivos IoT por meio da devicesApp e do driver (LoRa, Zigbee, nRF24)](#Envio-de-comandos-para-dispositivos-IoT-por-meio-da-devicesApp-e-do-driver-LoRa-Zigbee-nRF24)
 6. [Envio de medições - Tráfego Northbound](#Envio-de-medições---Tráfego-Northbound)
    * 6.1. [Envio de medições de dispositivos IoT em comunicação direta com o IoT Agent (Wi-FI ou Ethernet)](#Envio-de-medições-de-dispositivos-IoT-em-comunicação-direta-com-o-IoT-Agent-Wi-FI-ou-Ethernet) 
-
-
-    
+   * 6.2. [Envio de medições de dispositivos IoT por meio da devicesApp e do driver (LoRa, Zigbee, nRF24)](#Envio-de-medições-de-dispositivos-IoT-por-meio-da-devicesApp-e-do-driver-LoRa-Zigbee-nRF24)
+7. [Disposição dos componentes da arquitetura](#Disposição-dos-componentes-da-arquitetura)
 
 # Introdução  
 Este manual descreve em detalhes a utilização do SOFTWAY4IoT já integrado com a plataforma FIWARE.  A plataforma FIWARE pode ser definida como um arcabouço de componentes capaz de auxiliar no desenvolvimento de aplicações em um ambiente IoT. O SOFTWAY4IoT é uma solução corporativa para gerência de gateways IoT para cenários de campus e cidade inteligentes. Na integração estão presentes os seguintes componentes da plataforma FIWARE:
@@ -116,7 +116,7 @@ Corpo da requisição
 // "distancia" é nome do atributo registrado para o dispositivo sensor via WebSM.
 // 20 é o resultado da medição, o qual será persistido pelo ORION no MongoDB.
 ```
-### Envio de medições de dispositivos IoT por meio da devicesApp e do driver - LoRa, Zigbee, nRF24
+### Envio de medições de dispositivos IoT por meio da devicesApp e do driver (LoRa, Zigbee, nRF24)
 Na integração entre FIWARE e SOFTWAY4IoT, a devicesApp atuará como uma aplicação, recebendo os dados de leitura de um sensor através de seu respectivo driver e os encaminhando ao IoT Agent através de uma requisição HTTP POST.
 <p align="center">
   <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/FluxoMedi%C3%A7%C3%B5es%5BDrivers%5D.png">
