@@ -10,7 +10,7 @@
    * 4.1. [ORION Context Broker](#ORION-Context-Broker)
    * 4.2. [IoT Agent](#IoT-Agent)
 5. [Envio de Comandos - Tráfego Southbound](#Envio-de-Comandos---Tráfego-Southbound)
-   * 5.1. [Envio de comandos para dispositivos IoT em comunicação direta com o IoT Agent - Wi-FI e Ethernet](#Envio-de-comandos-para-dispositivos-IoT-em-comunicação-direta-com-o-IoT-Agent---Wi-FI-e-Ethernet)
+   * 5.1. [Envio de comandos para dispositivos IoT em comunicação direta com o IoT Agent - (Wi-FI e Ethernet)](#Envio-de-comandos-para-dispositivos-IoT-em-comunicação-direta-com-o-IoT-Agent---(Wi-FI-e-Ethernet))
 
   
 
@@ -70,7 +70,7 @@ Originalmente, na plataforma FIWARE, ao enviar um comando, o IoT Agent realiza u
 ```
 O fluxo é iniciado com o envio de uma requisição de atualização (updateContext) ao ORION solicitando a atualização para o resultado de um comando. O ORION então encaminhará a carga útil (payload) dessa requisição para o IoT Agent. Caso o IoT Agent aceite o comando, ele enviará um código HTTP 200 como resposta ao ORION. Essa resposta é encaminhada à aplicação de usuário que iniciou a interação. Essa primeira requisição tem por objetivo apenas iniciar o processo de envio de comandos em segundo plano no IoT Agent. A partir desse ponto, o fluxo segue caminhos distintos, de acordo com a tecnologia de comunicação utilizada pelo respectivo dispositivo envolvido no processo de comunicação. Maiores detalhes podem ser observados nas Seções 5.1 e 5.2.
 
-### Envio de comandos para dispositivos IoT em comunicação direta com o IoT Agent - Wi-FI e Ethernet
+### Envio de comandos para dispositivos IoT em comunicação direta com o IoT Agent - (Wi-FI e Ethernet)
 <p align="center">
   <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/FluxoComandos%5BIoTAgent%5D.png">
 </p>
