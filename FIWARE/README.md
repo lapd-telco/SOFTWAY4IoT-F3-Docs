@@ -104,3 +104,12 @@ Na integração entre FIWARE e SOFTWAY4IoT, a devicesApp atuará como uma aplica
 
 ### Figura 5 – Fluxo de envio de medição de um sensor.
 O fluxo é iniciado com um dispositivo enviando uma medição ao seu respectivo driver. Ao receber essa medição, o driver a encaminhará à devicesAPP através de uma conexão TCP. Após receber a medição, a devicesApp enviará uma requisição HTTP ao IoT Agent, informando o ID do dispositivo, o atributo para qual o resultado da medição será associado, o resultado da medição e a API Key,  a qual foi definida globalmente no arquivo de configuração do IoT Agent. O IoT Agent então encaminhará o  resultado da medição ao ORION para persistência. Para obter o resultado dessa medição, é necessário fazer uma requisição de consulta (queryContext) ao ORION.
+
+# 7. Disposição dos componentes da arquitetura
+A Figura 6 ilustra a distribuição dos componentes da arquitetura, sendo o ORION e o MongoDB implantados (preferencialmente) no FIWARE Lab e os demais componentes nos elementos do SOFTWAY4IoT. É possível outros posicionamentos dos componentes, porém, no contexto do projeto, essa distribuição parece ser a mais adequada.
+
+![](/FIWARE/Images/DistribuiçãoDosComponentes)
+
+
+
+
