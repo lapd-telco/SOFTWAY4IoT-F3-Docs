@@ -77,5 +77,9 @@ Originalmente na plataforma FIWARE, uma aplicação que gerencia um sensor obter
 ```diff
 - Obs: nesta versão, não há suporte a criação de serviços. Caso seja necessário, esse recurso será incluso em uma próxima versão.
 ```
+### 6.1	Envio de medições de dispositivos IoT em comunicação direta com o IoT Agent (Wi-FI ou Ethernet)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/FluxoMedi%C3%A7%C3%B5es%5BIoTAgent%5D.png">
+</p>
 
 
