@@ -51,14 +51,26 @@ Originalmente, na plataforma FIWARE, ao enviar um comando, o IoT Agent realiza u
 ```
 O fluxo é iniciado com o envio de uma requisição de atualização (updateContext) ao ORION solicitando a atualização para o resultado de um comando. O ORION então encaminhará a carga útil (payload) dessa requisição para o IoT Agent. Caso o IoT Agent aceite o comando, ele enviará um código HTTP 200 como resposta ao ORION. Essa resposta é encaminhada à aplicação de usuário que iniciou a interação. Essa primeira requisição tem por objetivo apenas iniciar o processo de envio de comandos em segundo plano no IoT Agent. A partir desse ponto, o fluxo segue caminhos distintos, de acordo com a tecnologia de comunicação utilizada pelo respectivo dispositivo envolvido no processo de comunicação. Maiores detalhes podem ser observados nas Seções 5.1 e 5.2.
 
-#### 5.1	Envio de comandos para dispositivos IoT em comunicação direta com o IoT Agent (Wi-FI e Ethernet)
+### 5.1	Envio de comandos para dispositivos IoT em comunicação direta com o IoT Agent (Wi-FI e Ethernet)
 <p align="center">
   <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/FluxoComandos%5BIoTAgent%5D.png">
 </p>
 
 ### Figura 2 – Fluxo de envio de comando a um atuador em comunicação direta com o IoT Agent.
+Após o IoT Agent obter os dados necessárias para o envio do comando, ele realizará uma requisição HTTP ao respectivo dispositivo e ficará aguardando por uma resposta. A resposta em questão, consiste em um JSON com o resultado para o comando previamente encaminhado. De posse do resultado, o IoT Agent o enviará ao ORION por meio de uma requisição de atualização
+(updateContext), para que o mesmo seja atualizado. Para obter o resultado do respectivo comando, é necessário fazer uma requisição de consulta (queryContext) para o ORION.
 
+### 5.2	Envio de comandos para dispositivos IoT por meio da devicesApp e do driver (LoRa, Zigbee, nRF24)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/FluxoComandos%5BDrivers%5D.png">
+</p>
 
+### Figura 3 – Fluxo de envio de comando a um atuador por meio da devicesApp e do driver.
+Após o IoT Agent obter os dados necessárias para o envio do comando, ele enviará à devicesApp uma requisição HTTP passando o ID do dispositivo a ser acionado. A devicesApp então usará uma conexão TCP para encaminhar o ID do dispositivo ao driver. A seguir, o driver enviará o comando ao dispositivo. Quando obtiver o resultado do comando proveniente do dispositivo, o driver o encaminhará através da conexão TCP previamente estabelecida com a devicesApp. A seguir, a devicesApp enviará um JSON com o resultado do comando ao IoT Agent através de uma requisição HTTP. Após receber o resultado, o IoT Agent o enviará ao ORION por meio de uma requisição de atualização (updateContext) para que o resultado do comando seja atualizado. Para obter o resultado do comando, é necessário fazer uma requisição de consulta (queryContext) ao ORION.
+
+A comunicação com os dispositivos que utilizam tecnologias de comunicação que não implementam toda a pilha TCP, e.g., LoRa, Zigbee, nRF24, dentre outros, ocorrerá através dos drivers do SOFTWAY4IoT e não através do IoT Agent. As requisições de comando recebidas pelo IoT Agent serão repassados à devicesApp e  não ao dispositivo, pois a responsabilidade de lidar com as particularidades de cada protocolo foi transferida aos drivers do SOFTWAY4IoT. Para que as requisições de comando sejam encaminhadas à devicesApp, todo dispositivo registrado no IoT Agent deverá receber o endpoint da devicesApp e, portanto, toda requisição de comando será encaminhada a ela
+
+Para que a devicesApp saiba para qual dispositivo o comando deve ser encaminhado, foi necessário realizar uma alteração no código fonte do IoT Agent, fazendo com que ao enviar uma requisição de comando, o IoT Agent passe como um parâmetro na requisição o ID do dispositivo a ser acionado. Com esse ID, a devicesApp enviará o comando  ao dispositivo através de seu respectivo driver. Ao receber o resultado para o comando proveniente do dispositivo, a devicesApp o encaminhará ao IoT Agent através de um JSON, da mesma forma que um dispositivo compatível com o IoT Agent for JSON faria.
 
 
 
