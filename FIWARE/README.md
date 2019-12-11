@@ -101,5 +101,6 @@ Na integração entre FIWARE e SOFTWAY4IoT, a devicesApp atuará como uma aplica
 <p align="center">
   <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/FluxoMedi%C3%A7%C3%B5es%5BDrivers%5D.png">
 </p>
+
 ### Figura 5 – Fluxo de envio de medição de um sensor.
 O fluxo é iniciado com um dispositivo enviando uma medição ao seu respectivo driver. Ao receber essa medição, o driver a encaminhará à devicesAPP através de uma conexão TCP. Após receber a medição, a devicesApp enviará uma requisição HTTP ao IoT Agent, informando o ID do dispositivo, o atributo para qual o resultado da medição será associado, o resultado da medição e a API Key,  a qual foi definida globalmente no arquivo de configuração do IoT Agent. O IoT Agent então encaminhará o  resultado da medição ao ORION para persistência. Para obter o resultado dessa medição, é necessário fazer uma requisição de consulta (queryContext) ao ORION.
