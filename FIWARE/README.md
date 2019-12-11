@@ -3,21 +3,8 @@
 2. [Arquitetura](#Arquitetura)
 3. [Componentes SOFTWAY4IoT](#Componentes-SOFTWAY4IoT)
    * 3.1. [SW4IoT_FIWARE_Manager](#SW4IoT_FIWARE_Manager)
+   * 3.2. [WebSM](#WebSM)
     
-**1. [Introdução](#Introdução)**
-
-  * [1.1. Markdown formatting cheatsheet](#heading--1-1)
-  * [1.2. Markdown formatting details](#heading--1-2)
-
-**[2. BBCode formatting](#heading--2)**
-
-  * [2.1. Basic text formatting](#heading--2-1)
-
-      * [2.1.1. Not so basic text formatting](#heading--2-1-1)
-
-  * [2.2. Lists, Images, Code](#heading--2-2)
-  * [2.3. Special features](#heading--2-3)
-
 
 # Introdução  
 Este manual descreve em detalhes a utilização do SOFTWAY4IoT já integrado com a plataforma FIWARE.  A plataforma FIWARE pode ser definida como um arcabouço de componentes capaz de auxiliar no desenvolvimento de aplicações em um ambiente IoT. O SOFTWAY4IoT é uma solução corporativa para gerência de gateways IoT para cenários de campus e cidade inteligentes. Na integração estão presentes os seguintes componentes da plataforma FIWARE:
