@@ -11,7 +11,7 @@
    * 4.2. [IoT Agent](#IoT-Agent)
 5. [Envio de Comandos - Tráfego Southbound](#Envio-de-Comandos---Tráfego-Southbound)
    * 5.1. [Envio de comandos para dispositivos IoT em comunicação direta com o IoT Agent - (Wi-FI e Ethernet)](#Envio-de-comandos-para-dispositivos-IoT-em-comunicação-direta-com-o-IoT-Agent---Wi-FI-e-Ethernet)
-   * 5.2. [Envio de comandos para dispositivos IoT por meio da devicesApp e do driver - (LoRa, Zigbee, nRF24)](#Envio-de-comandos-para-dispositivos-IoT-por-meio-da-devicesApp-e-do-driver---LoRa, Zigbee, nRF24)
+   * 5.2. [Envio de comandos para dispositivos IoT por meio da devicesApp e do driver - (LoRa, Zigbee, nRF24)](#Envio-de-comandos-para-dispositivos-IoT-por-meio-da-devicesApp-e-do-driver---LoRa-Zigbee-nRF24)
 
 
     
@@ -78,7 +78,7 @@ O fluxo é iniciado com o envio de uma requisição de atualização (updateCont
 Após o IoT Agent obter os dados necessárias para o envio do comando, ele realizará uma requisição HTTP ao respectivo dispositivo e ficará aguardando por uma resposta. A resposta em questão, consiste em um JSON com o resultado para o comando previamente encaminhado. De posse do resultado, o IoT Agent o enviará ao ORION por meio de uma requisição de atualização
 (updateContext), para que o mesmo seja atualizado. Para obter o resultado do respectivo comando, é necessário fazer uma requisição de consulta (queryContext) para o ORION.
 
-### Envio de comandos para dispositivos IoT por meio da devicesApp e do driver - (LoRa, Zigbee, nRF24)
+### Envio de comandos para dispositivos IoT por meio da devicesApp e do driver - (LoRa Zigbee nRF24)
 <p align="center">
   <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/FluxoComandos%5BDrivers%5D.png">
 </p>
