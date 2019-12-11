@@ -2,7 +2,7 @@
 1. [Introdução](#Introdução)
 2. [Arquitetura](#Arquitetura)
 3. [Componentes SOFTWAY4IoT](#Componentes-SOFTWAY4IoT)
-   3.1. [SW4IoT_FIWARE_Manager](#SW4IoT_FIWARE_Manager)
+   * 3.1. [SW4IoT_FIWARE_Manager](#SW4IoT_FIWARE_Manager)
     
 **1. [Introdução](#Introdução)**
 
