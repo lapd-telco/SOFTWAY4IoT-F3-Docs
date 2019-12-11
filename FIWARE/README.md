@@ -53,7 +53,7 @@ O fluxo é iniciado com o envio de uma requisição de atualização (updateCont
 
 #### 5.1	Envio de comandos para dispositivos IoT em comunicação direta com o IoT Agent (Wi-FI e Ethernet)
 <p align="center">
-![FluxoComandos](/FIWARE/Images/FluxoComandos[IoTAgent].png)
+  <img src="https://github.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-     Docs/blob/master/FIWARE/Images/FluxoComandos%5BIoTAgent%5D.png">
 </p>
 
 
