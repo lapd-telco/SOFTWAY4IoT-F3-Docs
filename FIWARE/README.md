@@ -1,5 +1,5 @@
 # Table of Contents
-1. [2.Arquitetura](#2.arquitetura)
+1. [Arquitetura](#arquitetura)
 2. [Example2](#example2)
 3. [Third Example](#third-example)
 
@@ -18,7 +18,7 @@ Este manual descreve em detalhes a utilização do SOFTWAY4IoT já integrado com
 
 Os dois componentes da FIWARE descritos acima utilizam uma instância do gerenciador de banco de dados MongoDB para persistência de dados. Sendo utilizado pelo ORION para armazenar dados de contexto gerados por aplicações e/ou dispositivos, e pelo IoT Agent para armazenar informações sobre dispositivos IoT.
 
-# 2.Arquitetura
+# Arquitetura
 ![Arquitetura](/FIWARE/Images/ArquiteturaIntegração[FIWARE].png)
 ### Figura 1 – Arquitetura da integração do SOFTWAY4IoT com a plataforma FIWARE.
 
