@@ -82,4 +82,14 @@ Originalmente na plataforma FIWARE, uma aplicação que gerencia um sensor obter
   <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/FluxoMedi%C3%A7%C3%B5es%5BIoTAgent%5D.png">
 </p>
 
+### Figura 4 – Fluxo de envio de medições de um sensor em comunicação direta com o IoT Agent.
+O fluxo é iniciado com um dispositivo encaminhando uma medição ao IoT Agent através de uma requisição HTTP, informando o ID do dispositivo, o atributo para qual o resultado da medição será associado, o resultado da medição e a API Key, a qual foi definida globalmente no arquivo de configuração do IoT Agent. Caso o dispositivo esteja devidamente registrado no IoT Agent, ele receberá como resposta um código HTTP 200. Em seguida, o IoT Agent encaminhará o resultado da medição ao ORION para persistência. Para obter o resultado dessa medição, é necessário fazer uma requisição de consulta (queryContext) ao ORION
+
+##### Exemplo de medição enviada ao IoT Agent pela aplicação que ativa um determinado dispositivo sensor 
+```
+http://200.129.207.169:7896/iot/json?i=sensor1s&k=123
+{"distancia": 20} 
+// "distancia" é nome do atributo registrado para o dispositivo sensor via WebSM.
+// 20 é o resultado da medição, o qual será persistido pelo ORION no MongoDB.
+```
 
