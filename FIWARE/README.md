@@ -43,7 +43,7 @@ Na integração entre FIWARE e SOFTWAY4IoT, a comunicação com os dispositivos 
 ### 5. Envio de Comandos - Tráfego Southbound
 Originalmente, na plataforma FIWARE, ao enviar um comando, o IoT Agent realiza uma requisição HTTP POST ao endpoint do dispositivo e fica aguardando pela resposta. A resposta em questão, consiste em um JSON com o resultado da requisição. O resultado é então encaminhado ao ORION para persistência.
 
-## Exemplo de resposta enviada ao IoT Agent pela aplicação que gerencia um determinado dispositivo atuador 
+##### Exemplo de resposta enviada ao IoT Agent pela aplicação que gerencia um determinado dispositivo atuador 
 ```
 {"mover": "movido com sucesso"} 
 // "mover" é nome do comando registrado para o dispositivo atuador via WebSM
