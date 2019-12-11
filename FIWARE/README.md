@@ -9,7 +9,7 @@
    * 3.4. [devicesApp FIWARE](#devicesApp-FIWARE)
 4. [Componentes FIWARE](#Componentes-FIWARE)
    * 4.1. [ORION Context Broker](#ORION-Context-Broker)
-   * 4.2. [IoT Agent](#IoT-Agent)
+   * 4.2. [IoT Agent for JSON](#IoT-Agent-for-JSON)
 5. [Envio de Comandos - Tráfego Southbound](#Envio-de-Comandos---Tráfego-Southbound)
    * 5.1. [Envio de comandos para dispositivos IoT em comunicação direta com o IoT Agent (Wi-FI ou Ethernet)](#Envio-de-comandos-para-dispositivos-IoT-em-comunicação-direta-com-o-IoT-Agent-Wi-FI-ou-Ethernet)
    * 5.2. [Envio de comandos para dispositivos IoT por meio da devicesApp e do driver (LoRa, Zigbee, nRF24)](#Envio-de-comandos-para-dispositivos-IoT-por-meio-da-devicesApp-e-do-driver-LoRa-Zigbee-nRF24)
@@ -51,7 +51,7 @@ Na plataforma FIWARE, existe um IoT Agent específico para lidar com as particul
 # Componentes FIWARE
 ### ORION Context Broker
 ORION é responsável pelo gerenciamento de dados de contexto das aplicações que utilizam a plataforma FIWARE, disponibilizando serviços de consulta e atualização desses dados através de uma API REST. Existem apenas dois tipos possíveis de interações de dados entre IoT Agent e ORION: as interações queryContext e updateContext. A queryContext é utilizada para operações de consulta e a updateContext para operações de atualização. Nessa integração, o ORION será utilizado para o gerenciamento de dados gerados por dispositivos IoT devidamente registrados no SOFTWAY4IoT, sejam eles sensores ou atuadores. Não foi necessário realizar mudanças no ORION para a integração.
-### IoT Agent
+### IoT Agent for JSON
 IoT Agent é responsável por intermediar a comunicação entre dispositivos IoT e ORION, traduzindo os dados de diferentes tipos de protocolo para para o formato NGSI, o qual é utilizado pelo ORION em todas suas interações. Nessa integração, será utilizado o IoT Agent for JSON, o qual atua como uma ponte entre o protocolo JSON e o NGSI. 
 
 O tráfego que flui através do IoT Agent é dividido em dois tipos: tráfego Southbound e Northbound. Todo tráfego gerado pelo ORION em direção a um dispositivo atuador é chamado de tráfego Southbound, que consiste no envio de requisições de comando geradas pelo ORION em direção a um dispositivo IoT. O tráfego Northbound consiste no envio de medições geradas por sensores em direção ao ORION.
