@@ -5,7 +5,7 @@ Nesse repositório há duas simples aplicações de exemplo, as quais foram dese
 
 # Disposição dos componentes - Teste Wi-Fi
 ![](/FIWARE/ThingsApps_Raspberrypi_WIFI/Docs/images/Disposição_dos_Componentes-WiFi.jpg)
-# Conexão física
-Conexão de rede
+# Conexão física (Conexão de rede)
+Caso o gateway manager não tenha ip público, é possível acessá-lo através do gateway.
 # Conexão virtual
 Troca de mensagens entre os componentes
