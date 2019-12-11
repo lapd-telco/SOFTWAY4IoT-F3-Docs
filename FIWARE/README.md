@@ -108,8 +108,8 @@ O fluxo é iniciado com um dispositivo enviando uma medição ao seu respectivo 
 # 7. Disposição dos componentes da arquitetura
 A Figura 6 ilustra a distribuição dos componentes da arquitetura, sendo o ORION e o MongoDB implantados (preferencialmente) no FIWARE Lab e os demais componentes nos elementos do SOFTWAY4IoT. É possível outros posicionamentos dos componentes, porém, no contexto do projeto, essa distribuição parece ser a mais adequada.
 
-![](/FIWARE/Images/DistribuiçãoDosComponentes)
+![](/FIWARE/Images/DistribuiçãoDosComponentes.png)
 
-
+### Figura 6 - Distribuição dos componentes da arquitetura.
 
 
