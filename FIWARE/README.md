@@ -11,8 +11,7 @@
    * 4.2. [IoT Agent](#IoT-Agent)
 5. [Envio de Comandos - Tráfego Southbound](#Envio-de-Comandos---Tráfego-Southbound)
    * 5.1. [Envio de comandos para dispositivos IoT em comunicação direta com o IoT Agent - Wi-FI e Ethernet](#Envio-de-comandos-para-dispositivos-IoT-em-comunicação-direta-com-o-IoT-Agent---Wi-FI-e-Ethernet)
-
-  
+   * 5.2. [Envio de medições de dispositivos IoT por meio da devicesApp e do driver - LoRa, Zigbee, nRF24](#Envio-de-medições-de-dispositivos-IoT-por-meio-da-devicesApp-e-do-driver---LoRa,-Zigbee,-nRF24)
 
 
     
@@ -115,7 +114,7 @@ Corpo da requisição
 // "distancia" é nome do atributo registrado para o dispositivo sensor via WebSM.
 // 20 é o resultado da medição, o qual será persistido pelo ORION no MongoDB.
 ```
-### Envio de medições de dispositivos IoT por meio da devicesApp e do driver (LoRa, Zigbee, nRF24)
+### Envio de medições de dispositivos IoT por meio da devicesApp e do driver - LoRa, Zigbee, nRF24
 Na integração entre FIWARE e SOFTWAY4IoT, a devicesApp atuará como uma aplicação, recebendo os dados de leitura de um sensor através de seu respectivo driver e os encaminhando ao IoT Agent através de uma requisição HTTP POST.
 <p align="center">
   <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/FluxoMedi%C3%A7%C3%B5es%5BDrivers%5D.png">
