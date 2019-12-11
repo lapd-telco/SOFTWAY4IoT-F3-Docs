@@ -10,7 +10,7 @@
    * 4.1. [ORION Context Broker](#ORION-Context-Broker)
    * 4.2. [IoT Agent](#IoT-Agent)
 5. [Envio de Comandos - Tráfego Southbound](#Envio-de-Comandos---Tráfego-Southbound)
-   * 5.1. [Envio de comandos para dispositivos IoT em comunicação direta com o IoT Agent (Wi-FI e Ethernet)](#Envio-de- comandos-para-dispositivos-IoT-em-comunicação-direta-com-o-IoT-Agent-(Wi-FI e Ethernet))
+   * 5.1. [Envio de comandos para dispositivos IoT em comunicação direta com o IoT Agent - Wi-FI e Ethernet](#Envio-de- comandos-para-dispositivos-IoT-em-comunicação-direta-com-o-IoT-Agent---Wi-FI-e-Ethernet)
 
   
 
@@ -70,7 +70,7 @@ Originalmente, na plataforma FIWARE, ao enviar um comando, o IoT Agent realiza u
 ```
 O fluxo é iniciado com o envio de uma requisição de atualização (updateContext) ao ORION solicitando a atualização para o resultado de um comando. O ORION então encaminhará a carga útil (payload) dessa requisição para o IoT Agent. Caso o IoT Agent aceite o comando, ele enviará um código HTTP 200 como resposta ao ORION. Essa resposta é encaminhada à aplicação de usuário que iniciou a interação. Essa primeira requisição tem por objetivo apenas iniciar o processo de envio de comandos em segundo plano no IoT Agent. A partir desse ponto, o fluxo segue caminhos distintos, de acordo com a tecnologia de comunicação utilizada pelo respectivo dispositivo envolvido no processo de comunicação. Maiores detalhes podem ser observados nas Seções 5.1 e 5.2.
 
-### Envio de comandos para dispositivos IoT em comunicação direta com o IoT Agent (Wi-FI e Ethernet)
+### Envio de comandos para dispositivos IoT em comunicação direta com o IoT Agent - Wi-FI e Ethernet
 <p align="center">
   <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/FluxoComandos%5BIoTAgent%5D.png">
 </p>
@@ -79,7 +79,7 @@ O fluxo é iniciado com o envio de uma requisição de atualização (updateCont
 Após o IoT Agent obter os dados necessárias para o envio do comando, ele realizará uma requisição HTTP ao respectivo dispositivo e ficará aguardando por uma resposta. A resposta em questão, consiste em um JSON com o resultado para o comando previamente encaminhado. De posse do resultado, o IoT Agent o enviará ao ORION por meio de uma requisição de atualização
 (updateContext), para que o mesmo seja atualizado. Para obter o resultado do respectivo comando, é necessário fazer uma requisição de consulta (queryContext) para o ORION.
 
-### Envio de comandos para dispositivos IoT por meio da devicesApp e do driver (LoRa, Zigbee, nRF24)
+### Envio de comandos para dispositivos IoT por meio da devicesApp e do driver - LoRa, Zigbee, nRF24
 <p align="center">
   <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/FluxoComandos%5BDrivers%5D.png">
 </p>
