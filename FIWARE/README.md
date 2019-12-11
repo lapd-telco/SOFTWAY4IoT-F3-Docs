@@ -1,5 +1,5 @@
 # Table of Contents
-1. [2. Arquitetura](# 2. arquitetura)
+1. [2. Arquitetura]
 2. [Example2](#example2)
 3. [Third Example](#third-example)
 
