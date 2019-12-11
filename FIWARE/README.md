@@ -11,7 +11,7 @@
    * 4.2. [IoT Agent](#IoT-Agent)
 5. [Envio de Comandos - Tráfego Southbound](#Envio-de-Comandos---Tráfego-Southbound)
    * 5.1. [Envio de comandos para dispositivos IoT em comunicação direta com o IoT Agent - Wi-FI e Ethernet](#Envio-de-comandos-para-dispositivos-IoT-em-comunicação-direta-com-o-IoT-Agent---Wi-FI-e-Ethernet)
-   * 5.2. [Envio de medições de dispositivos IoT por meio da devicesApp e do driver - LoRa, Zigbee, nRF24](#Envio-de-medições-de-dispositivos-IoT-por-meio-da-devicesApp-e-do-driver---LoRa,-Zigbee,-nRF24)
+   * 5.2. [Envio de comandos para dispositivos IoT por meio da devicesApp e do driver - LoRa, Zigbee, nRF24](#Envio-de-comandos-para-dispositivos-IoT-por-meio-da-devicesApp-e-do-driver---LoRa,-Zigbee,-nRF24)
 
 
     
