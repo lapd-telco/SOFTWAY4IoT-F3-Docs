@@ -1,13 +1,9 @@
 # Table of Contents
-1. [Arquitetura](#arquitetura)
-2. [Example2](#example2)
+1. [Introdução](#introdução)
+2. [2.Arquitetura](#2.arquitetura)
 3. [Third Example](#third-example)
 
-## Example
-## Example2
-## Third Example
-
-# 1.Introdução  
+# Introdução  
 Este manual descreve em detalhes a utilização do SOFTWAY4IoT já integrado com a plataforma FIWARE.  A plataforma FIWARE pode ser definida como um arcabouço de componentes capaz de auxiliar no desenvolvimento de aplicações em um ambiente IoT. O SOFTWAY4IoT é uma solução corporativa para gerência de gateways IoT para cenários de campus e cidade inteligentes. Na integração estão presentes os seguintes componentes da plataforma FIWARE:
 
 - ORION: responsável por gerenciar dados de contexto gerados por dispositivos IoT, oferecendo operações de gerenciamento e consulta desses mesmos dados via API REST.
@@ -18,7 +14,7 @@ Este manual descreve em detalhes a utilização do SOFTWAY4IoT já integrado com
 
 Os dois componentes da FIWARE descritos acima utilizam uma instância do gerenciador de banco de dados MongoDB para persistência de dados. Sendo utilizado pelo ORION para armazenar dados de contexto gerados por aplicações e/ou dispositivos, e pelo IoT Agent para armazenar informações sobre dispositivos IoT.
 
-# Arquitetura
+# 2.Arquitetura
 ![Arquitetura](/FIWARE/Images/ArquiteturaIntegração[FIWARE].png)
 ### Figura 1 – Arquitetura da integração do SOFTWAY4IoT com a plataforma FIWARE.
 
