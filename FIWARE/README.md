@@ -88,7 +88,9 @@ O fluxo é iniciado com um dispositivo encaminhando uma medição ao IoT Agent a
 ##### Exemplo de medição enviada ao IoT Agent pela aplicação que ativa um determinado dispositivo sensor 
 ```
 http://200.129.207.169:7896/iot/json?i=sensor1&k=123
+Corpo da requisição
 {"distancia": 20} 
+
 // i é o ID do dispositivo
 // k é a API key definida no arquivo de configuração do IoT Agent
 // "distancia" é nome do atributo registrado para o dispositivo sensor via WebSM.
