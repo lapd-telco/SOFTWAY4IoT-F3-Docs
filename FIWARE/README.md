@@ -13,7 +13,7 @@ Os dois componentes da FIWARE descritos acima utilizam uma instância do gerenci
 ![Arquitetura](/FIWARE/Images/ArquiteturaIntegração[FIWARE].png)
 ### Figura 1 – Arquitetura da integração do SOFTWAY4IoT com a plataforma FIWARE.
 
-<p>O processo de integração é realizado através de um conjunto de interações entre componentes específicos da FIWARE e do SOFTWAY4IoT. A Figura 1 apresenta a arquitetura proposta para essa integração, exibindo as interações entre os componentes ORION, IoT Agent e o MongoDB (todos da FIWARE), e os componentes WebSM, SW4IoT_FIWARE_Manager, devicesApp FIWARE e os diferentes drivers de protocolo utilizados para comunicação com dispositivos IoT (do SOFTWAY4IoT). As seções a seguir apresentam em detalhes as características de cada um desses componentes.</p>
+O processo de integração é realizado através de um conjunto de interações entre componentes específicos da FIWARE e do SOFTWAY4IoT. A Figura 1 apresenta a arquitetura proposta para essa integração, exibindo as interações entre os componentes ORION, IoT Agent e o MongoDB (todos da FIWARE), e os componentes WebSM, SW4IoT_FIWARE_Manager, devicesApp FIWARE e os diferentes drivers de protocolo utilizados para comunicação com dispositivos IoT (do SOFTWAY4IoT). As seções a seguir apresentam em detalhes as características de cada um desses componentes.
 
 # 3. Componentes SOFTWAY4IoT
 ### 3.1 SW4IoT_FIWARE_Manager
@@ -52,7 +52,9 @@ Originalmente, na plataforma FIWARE, ao enviar um comando, o IoT Agent realiza u
 O fluxo é iniciado com o envio de uma requisição de atualização (updateContext) ao ORION solicitando a atualização para o resultado de um comando. O ORION então encaminhará a carga útil (payload) dessa requisição para o IoT Agent. Caso o IoT Agent aceite o comando, ele enviará um código HTTP 200 como resposta ao ORION. Essa resposta é encaminhada à aplicação de usuário que iniciou a interação. Essa primeira requisição tem por objetivo apenas iniciar o processo de envio de comandos em segundo plano no IoT Agent. A partir desse ponto, o fluxo segue caminhos distintos, de acordo com a tecnologia de comunicação utilizada pelo respectivo dispositivo envolvido no processo de comunicação. Maiores detalhes podem ser observados nas Seções 5.1 e 5.2.
 
 #### 5.1	Envio de comandos para dispositivos IoT em comunicação direta com o IoT Agent (Wi-FI e Ethernet)
-![](/FIWARE/Images/FluxoComandos[IoT Agent].png)
+![FluxoComandos](/FIWARE/Images/FluxoComandos[IoT Agent].png)
+![Arquitetura](/FIWARE/Images/ArquiteturaIntegração[FIWARE].png)
+
 
 
 
