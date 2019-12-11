@@ -40,7 +40,7 @@ Para que um dispositivo possa receber comandos ou enviar medições, é necessá
 
 Na integração entre FIWARE e SOFTWAY4IoT, a comunicação com os dispositivos IoT será realizada de acordo com a tecnologia de comunicação utilizada pelos mesmos. Para os dispositivos que utilizam tecnologias de comunicação que implementam toda a pilha TCP/IP, e.g., Wi-Fi e Ethernet, o processo de comunicação será realizado diretamente entre o respectivo dispositivo e o IoT Agent. Para esses casos, não é necessário a utilização do nenhum mecanismo para interfacear a comunicação, pois os respectivos dispositivos possuem a capacidade de atender as requisições HTTP de forma direta. Para os dispositivos que utilizam tecnologias de comunicação que não implementam toda a pilha TCP/IP, e.g., Lora, Zigbee, nRF24, o processo de comunicação será realizado através da utilização de um agente intermediário, responsável por interfacear a comunicação entre o respectivo dispositivo e o IoT Agent. Nesse cenário, a devicesApp e os drivers, serão os responsáveis por intermediar o processo de comunicação, realizando a tradução entre o protocolo original do dispositivo e o HTTP.
 
-### 5. Envio de Comandos - Tráfego Southbound
+# 5. Envio de Comandos - Tráfego Southbound
 Originalmente, na plataforma FIWARE, ao enviar um comando, o IoT Agent realiza uma requisição HTTP POST ao endpoint do dispositivo e fica aguardando pela resposta. A resposta em questão, consiste em um JSON com o resultado da requisição. O resultado é então encaminhado ao ORION para persistência.
 
 ##### Exemplo de resposta enviada ao IoT Agent pela aplicação que ativa um determinado dispositivo atuador 
@@ -72,7 +72,7 @@ A comunicação com os dispositivos que utilizam tecnologias de comunicação qu
 
 Para que a devicesApp saiba para qual dispositivo o comando deve ser encaminhado, foi necessário realizar uma alteração no código fonte do IoT Agent, fazendo com que ao enviar uma requisição de comando, o IoT Agent passe como um parâmetro na requisição o ID do dispositivo a ser acionado. Com esse ID, a devicesApp enviará o comando  ao dispositivo através de seu respectivo driver. Ao receber o resultado para o comando proveniente do dispositivo, a devicesApp o encaminhará ao IoT Agent através de um JSON, da mesma forma que um dispositivo compatível com o IoT Agent for JSON faria.
 
-### 6.	Envio de medições - Tráfego Northbound
+# 6.	Envio de medições - Tráfego Northbound
 Originalmente na plataforma FIWARE, uma aplicação que gerencia um sensor obteria uma medição e a enviaria ao IoT Agent através de uma requisição HTTP POST, informando o ID do dispositivo, a API KEY, o atributo para qual o resultado da medição será associado e o resultado da medição. A API Key é necessária para autenticação dos dispositivos, podendo ser definida uma única API Key global no arquivo de configuração do IoT Agent [(config.js)](https://github.com/telefonicaid/iotagent-json/blob/master/config.js). Alternativamente, é possível fornecer uma API Key ao criar um serviço, o que consiste em criar grupos individuais de dispositivos associados a um determinado contexto, podendo definir uma API Key para cada grupo.
 ```diff
 - Obs: nesta versão, não há suporte a criação de serviços. Caso seja necessário, esse recurso será incluso em uma próxima versão.
