@@ -79,6 +79,11 @@ Originalmente na plataforma FIWARE, uma aplicação que gerencia um sensor obter
 
 
 
-
+```diff
+- text in red
++ text in green
+! text in orange
+# text in gray
+```
 
 
