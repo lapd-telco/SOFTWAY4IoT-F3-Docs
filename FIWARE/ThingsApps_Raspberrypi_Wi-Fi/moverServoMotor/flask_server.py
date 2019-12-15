@@ -5,7 +5,8 @@ from moveServo import activateServo
 app = Flask(__name__)
 raspberryIp = '0.0.0.0'
 
-#The IoT Agent will make a HTTP POST for this endpoint 
+#The IoT Agent will make a HTTP POST for this endpoint
+#The endpoint registered for the actuator device in WebSM
 @app.route("/servoexemplo", methods=['POST'])
 def commandExecution():
     #Function that activate the servo motor
