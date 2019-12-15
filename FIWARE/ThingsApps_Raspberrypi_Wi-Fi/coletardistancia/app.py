@@ -1,5 +1,5 @@
 import time #Time library of Python
-from sendDistance import distance
+from sendDistance import distance #External file that interact with the ultrasonic sensor
 import requests #Python lib for HTTP requests
 
 if __name__ == '__main__':
