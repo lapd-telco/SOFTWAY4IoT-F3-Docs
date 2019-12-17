@@ -9,12 +9,12 @@ appconfig = {
 	},
 	devices:{
 		ultrasonic: {
-			id: 'sensor1s',
-			attribute: 'distance'
+			id: 'sensor1s', //id of the device (sensor) registered in WebSM
+			attribute: 'distance' //atributte of the sensor
 		},
 		servo: {
-			id: 'servomotor',
-			command: 'mover' //sufix _info
+			id: 'servomotor', //id of the device (actuator) registered in WebSM
+			command: 'mover' //command of the actuator (sufix _info)
 		}
 	}
 }
