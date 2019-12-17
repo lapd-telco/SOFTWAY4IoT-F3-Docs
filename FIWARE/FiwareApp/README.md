@@ -19,13 +19,13 @@ Acesse a seção Slices e selecione o slice desejado.
   <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/yaml1.png">
 </p>
 
-Na aba applications clique em + ADD
+Na aba applications clique em + ADD.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/yaml2.png">
 </p>
 
-Insira a URL do arquivo YAML
+Insira a URL do arquivo YAML e clique em save.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/yaml3.png">
