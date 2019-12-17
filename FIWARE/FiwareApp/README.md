@@ -13,6 +13,10 @@ sudo npm install (instala as dependências do projeto)
 npm start (executa a aplicação)
 ```
 ### Arquivo YAML para deploy via WebSM
+
+
+
+
 Acesse a seção Slices e selecione o slice desejado.
 
 <p align="center">
@@ -25,7 +29,7 @@ Na aba applications clique em + ADD.
   <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/yaml2.png">
 </p>
 
-Insira a URL do arquivo YAML e clique em save.
+Insira a URL do arquivo YAML e clique em SAVE.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/yaml3.png">
