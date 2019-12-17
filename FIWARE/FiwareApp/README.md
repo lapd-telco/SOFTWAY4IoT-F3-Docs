@@ -4,11 +4,10 @@ Nesse repositório, há uma aplicação que faz consultas a API REST do componen
 Para executar a aplicação, é necessário intalar o Node.js e o NPM (Gerenciador de pacotes do Node). 
 Dentro do diretório raiz da aplicação, abra o terminal e digite: 
 ```
-sudo npm install (Isso irá instalar as dependências do projeto)
+sudo npm install (instala as dependências do projeto)
 ```
-execução
 ```
-npm start
+npm start (executa a aplicação)
 ```
 
 
