@@ -71,19 +71,19 @@
       </div>
     </div>
   </div>
-  
+  <!--Link socket.io library-->
   <script src="/socket.io/socket.io.js"></script>
   <script>
-
+    
     $("#success-alert").hide();
     $("#error-alert").hide();
-
+    //Server (back-end) URL
     var socket = io('http://'+ window.location.hostname + ':5600');
-    
+    //Receive the command result by socket connection with the back-end
     socket.on('receiveCommandResult', function(commandResult){
       document.getElementById("servoresult").innerHTML = commandResult.mover_info;    
     });
-
+    //Receive the measurement result by socket connection with the back-end
     socket.on('receiveMeasurementResult', function(measurementResult){
       document.getElementById("sensorprevious").innerHTML = document.getElementById('sensorcurrent').innerHTML;
       document.getElementById("sensorcurrent").innerHTML = measurementResult.distance + "cm";    
