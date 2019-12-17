@@ -13,6 +13,6 @@ sudo npm install (instala as dependências do projeto)
 ```
 npm start (executa a aplicação)
 ```
-## via Yaml
+## Arquivo Yaml
 
 
