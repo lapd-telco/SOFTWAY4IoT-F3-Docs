@@ -12,7 +12,7 @@ sudo npm install (instala as dependências do projeto)
 ```
 npm start (executa a aplicação)
 ```
-### Arquivo Yaml para deploy via WebSM
+### Arquivo YAML para deploy via WebSM
 Acesse a seção Slices e selecione o slice desejado.
 
 <p align="center">
