@@ -15,8 +15,8 @@ npm start (executa a aplicação)
 ```
 ### Arquivo YAML para deploy via WebSM
 ```
-Nessa abordagem, caso precise alterar a aplicação é necessário gerar um nova imagem e enviá-la para o DockerHub, também é
-necessário alterar a propriedade image do arquivo YAML (FiwareApp.yaml) da aplicação (atribuindo o nome da nova imagem criada).
+Nessa abordagem, caso precise alterar a aplicação, é necessário gerar um nova imagem e enviá-la para o DockerHub, também é
+necessário alterar a propriedade image do arquivo YAML (FiwareApp.yaml) da aplicação, atribuindo o nome da nova imagem criada.
 ```
 Acesse a seção Slices e selecione o slice desejado.
 
