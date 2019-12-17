@@ -30,6 +30,7 @@ Insira a URL do arquivo YAML da aplicação e clique em SAVE.
 ```
 O arquivo está no repositório do projeto, basta efetuar um clique no arquivo (FiwareApp.yaml), clicar em raw e copiar a URL do arquivo na barra de endereço do navegador.
 
+URL obtida:
 https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/FiwareApp/FiwareApp.yaml
 ```
 <p align="center">
