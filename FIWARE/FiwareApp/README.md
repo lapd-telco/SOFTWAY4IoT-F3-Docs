@@ -15,7 +15,7 @@ npm start (executa a aplicação)
 ### Arquivo Yaml para deploy via WebSM
 Acesse a seção Slices e selecione o slice desejado.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/FluxoComandos%5BDrivers%5D.png">
+  <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/yaml.png">
 </p>
 
 
