@@ -21,7 +21,7 @@ app.get('/', function (req, res) {
 	res.sendFile( path.join( __dirname, 'www/'))
 });
 
-//Print id of Every socket created 
+//Print id of every socket created 
 io.on('connection', function (socket) {
 	console.log(`Socket conectado: ${socket.id}`)
 });
