@@ -42,7 +42,7 @@ https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWA
 </p>
 
 # ORION - Subscriptions
-O Orion Context Broker provê um recurso chamado subscrições, que consiste basicamente em notificar sua aplicação em uma determinada rota HTTP sempre que um atributo ou o resultado para um comando de algum dispositivo for atualizado, evitando assim que sua aplicação tenha que ficar de tempos em tempos verificando se um determinado dispositivo (sensor) publicou alguma nova medição ou um novo resultado para um comando (atuador). Essa aplicação foi implementada visando a utilização desse recurso, por isso, para seu correto funcionamento, é necessário registar (subsescrever) essa aplicação no ORION.
+O Orion Context Broker provê um recurso chamado subscrições, que consiste basicamente em notificar sua aplicação em uma determinada rota HTTP sempre que um atributo ou o resultado para um comando de algum dispositivo for atualizado, evitando assim que sua aplicação tenha que ficar de tempos em tempos verificando se um determinado dispositivo (sensor) publicou alguma nova medição ou um novo resultado para um comando (atuador). Essa aplicação foi implementada visando a utilização desse recurso, por isso, para seu correto funcionamento, é necessário registar (subsescrever) essa aplicação no ORION, assim, sempre que um determinado sensor ou atuador publicar uma atualização, a aplicação será notificada e irá consultar no ORION essas informações (medição ou resultado do comando) atualizadas.
 
 ### Entidade de dados
 Dentro da plataforma FIWARE, Todo dispositivo é representando como uma entidade de dados, que é uma representação de algum objeto do mundo real.
@@ -62,6 +62,7 @@ Dentro da plataforma FIWARE, Todo dispositivo é representando como uma entidade
 ```
 O nome da entidade e o tipo são preenchidos pelo SW4IoT_FIWARE_Manager no momento do cadastro do dispositivo feito via interface web do WebSM, por isso, essas informações não são solicitadas durante o processo de cadastro do dispositivo.
 
+Para subescrever a aplicação 
 ```
 HTTP POST
 http://200.129.207.169:1026/v2/subscriptions
