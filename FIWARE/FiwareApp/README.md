@@ -57,7 +57,7 @@ Dentro da plataforma FIWARE, todo dispositivo é representando como uma entidade
      "attributes": [
        { "object_id": "distance", "name": "distance", "type": "Double" }
      ]
-   }
+}
 
 ```
 O nome da entidade e o tipo são preenchidos pelo SW4IoT_FIWARE_Manager no momento do cadastro do dispositivo feito via interface web do WebSM, por isso, essas informações não são solicitadas durante o processo de cadastro do dispositivo.
