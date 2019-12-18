@@ -1,5 +1,5 @@
 # Aplicação de exemplo - FIWARE
-Nesse repositório, há uma aplicação que faz consultas a API REST do componente ORION, o qual é reponsável pelo gerenciamento de dados de contexto coletados por dispositivos IoT previamente registrados no IoT Agent. A aplicação foi desenvolvida para consultar as medições geradas por um sensor ultrasônico e para iniciar o fluxo de envio de comando para o acionamento de um motor servo, consultando posteriormente o resultado obtido para esse comando.
+Nesse repositório, há uma aplicação que faz consultas a API REST do componente Orion, o qual é reponsável pelo gerenciamento de dados de contexto coletados por dispositivos IoT previamente registrados no IoT Agent. A aplicação foi desenvolvida para consultar as medições geradas por um sensor ultrasônico e para iniciar o fluxo de envio de comando para o acionamento de um motor servo, consultando posteriormente o resultado obtido para esse comando.
 # RUN
 A aplicação pode ser executada via terminal ou via WebSM
 
@@ -41,7 +41,7 @@ https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWA
   <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/yaml3.png">
 </p>
 
-# ORION - Subscriptions
+# Orion - Subscriptions
 O Orion Context Broker provê um recurso chamado subscrições, que consiste basicamente em notificar sua aplicação em uma determinada rota HTTP sempre que um atributo ou o comando (resultado para o comando) de algum dispositivo for atualizado, evitando assim que sua aplicação tenha que ficar de tempos em tempos verificando se um determinado dispositivo publicou alguma atualização. No contexto dessa aplicação, após registar o sensor ultrasônico e o motor servo via interface web do WebSM, informando seus ids, assim como um atributo "distance" para armazenar a distância coletada pelo sensor ultrasônico e o comando "move" para armazenar o resultado do comando enviado pelo motor servo, sendo assim, sempre que algum desses dispositivos publicarem alguma atualização, a aplicação será notificada em uma rota HTTP definida para cada um desses dispositivos, consultado o valor atualizado do atributo (distance) do sensor ultrasônico, ao ser notificada pelo ORION na rota HTTP definida para o sensor ultrasônico, assim como o valor atualizado do comando (move) do motor servo, ao ser notificada pelo ORION na rota HTTP definida para o motor servo.
 
 ### Entidade de dados
@@ -64,9 +64,9 @@ O nome da entidade e o tipo são preenchidos pelo SW4IoT_FIWARE_Manager no momen
 
 Para subescrever a aplicação 
 
-Utilizando algum cliente HTTP como: [Postman](https://www.getpostman.com/) ou [Insomnia](https://insomnia.rest/download/)
+Utilizando algum cliente HTTP como o [Postman](https://www.getpostman.com/) ou [Insomnia](https://insomnia.rest/download/), envie as seguintes requisições para o Orion Context Broker:
 
-##### A aplicação será notificada pelo ORION sempre que o sensor ultrasônico publicar uma nova distância
+##### A aplicação será notificada pelo Orion sempre que o sensor ultrasônico publicar uma nova distância
 ```
 Método: HTTP POST
 URL: http://IP_ORION:1026/v2/subscriptions
@@ -90,7 +90,7 @@ Corpo da requisição:
   }
 }
 ```
-##### A aplicação será notificada pelo ORION sempre que o motor servo publicar um novo resultado para o comando
+##### A aplicação será notificada pelo Orion sempre que o motor servo publicar um novo resultado para o comando
 ```
 Método: HTTP POST
 URL: http://IP_ORION:1026/v2/subscriptions
