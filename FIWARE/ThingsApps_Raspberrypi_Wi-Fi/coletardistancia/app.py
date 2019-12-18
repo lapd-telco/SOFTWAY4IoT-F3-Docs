@@ -11,7 +11,7 @@ if __name__ == '__main__':
             print(dist)
             #Make an HTTP POST request for the IoT Agent south porth (7896)
             #This request will send the distance colected by the sensor 
-            ioTAgentURL = 'http://10.16.0.243:7896/iot/json?i=sensor1&k=1234'
+            ioTAgentURL = 'http://10.16.0.243:7896/iot/json?i=sensor1s&k=123'
             #/iot/json Is the endpoint of the default service defined in the configuration file of the IoT Agent (config.js)
             #i parameter is the id of the device
             #k parameter is the API key defined in the IoT Agent configuration file (config.js)
