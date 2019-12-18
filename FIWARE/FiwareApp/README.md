@@ -105,7 +105,7 @@ Corpo da requisição:
 	}],
      "condition": {
       //nome_do_comando_info corresponde ao resultado do comando
-      //Sempre que esse comando for atualizado a aplicação será notificada.
+      //Sempre que o resultado para o comando mover for atualizado a aplicação será notificada.
       "attrs": [ "mover_info" ]  
     }
   },
