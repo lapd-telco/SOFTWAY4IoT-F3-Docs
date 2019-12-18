@@ -41,7 +41,48 @@ https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWA
   <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/yaml3.png">
 </p>
 
+# ORION - Subscriptions
+O Orion Context Broker provê um recurso chamado subscrições, que consiste basicamente em notificar sua aplicação em uma determinada rota HTTP sempre que um atributo ou o resultado para um comando de algum dispositivo for atualizado, evitando assim que sua aplicação tenha que ficar de tempos em tempos verificando se um determinado dispositivo (sensor) publicou alguma nova medição ou um novo resultado para um comando (atuador). Essa aplicação foi implementada visando a utilização desse recurso, por isso, para seu correto funcionamento, é necessário registar (subsescrever) essa aplicação no ORION.
 
+###Entidade de dados
+Dentro da plataforma FIWARE, Todo dispositivo é representando como uma entidade de dados, que é uma representação de algum objeto do mundo real.
 
+##### Exemplo da estrutura de um dispositivo dentro da plataforma FIWARE
+
+```
+{
+     "device_id":   "sensor001",
+     "entity_name": "urn:ngsi-ld:Thing:001", //ID da entidade de dados
+     "entity_type": "Thing",
+     "attributes": [
+       { "object_id": "c", "name": "count", "type": "Integer" }
+     ]
+   }
+
+```
+O id da entidade e tipo é preenchido pelo SW4IoT_FIWARE_Manager no momento do cadastro do dispositivo feito via WebSM
+
+```
+HTTP POST
+http://200.129.207.169:1026/v2/subscriptions
+{
+  "description": "Notify me of all sensor distance changes",
+  "subject": {
+    "entities":
+     	[{
+				"idPattern": "urn:ngsi-ld:Thing:servomotor", i
+				"type": "Thing"
+			}],
+     "condition": {
+      "attrs": [ "mover_info" ] 
+    }
+  },
+  "notification": {
+    "http": {
+      "url": "http://200.129.207.169:5600/commandresult" //Rota na qual a aplicação será notificada.
+    }
+  }
+}
+```
 
 
