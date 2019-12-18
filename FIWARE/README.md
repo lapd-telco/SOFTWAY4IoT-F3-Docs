@@ -31,7 +31,7 @@ Os dois componentes da FIWARE descritos acima utilizam uma instância do gerenci
 
 # Arquitetura
 <p align="center">
-  <img src="./Images/ArquiteturaIntegração[FIWARE].png)">
+  <img src="./Images/ArquiteturaIntegração[FIWARE].png">
 </p>
 ### Figura 1 – Arquitetura da integração do SOFTWAY4IoT com a plataforma FIWARE.
 
