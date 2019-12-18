@@ -1,20 +1,20 @@
 appconfig = {
 	server: {
-        host: '0.0.0.0',
-        port: '5600'
+        host: '0.0.0.0', //Application IP
+        port: '5600' //Application PORT
 	},
 	orion: {
-		host: '200.129.207.169',
-		port: '1026'
+		host: '200.129.207.169', //Orion Context Broker IP
+		port: '1026' //ORION Context Broker PORT
 	},
 	devices:{
 		ultrasonic: {
-			id: 'sensor1s', //id of the device (ultrasonic sensor) registered in WebSM
-			attribute: 'distance' //atributte of the sensor
+			id: 'sensor1s', //ID of the device (ultrasonic sensor) registered in WebSM
+			attribute: 'distance' //Atributte of the sensor
 		},
 		servo: {
-			id: 'servomotor', //id of the device (servo motor) registered in WebSM
-			command: 'mover' //command of the actuator (sufix _info)
+			id: 'servomotor', //ID of the device (servo motor) registered in WebSM
+			command: 'mover' //Command of the actuator
 		}
 	}
 }
