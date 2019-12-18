@@ -42,20 +42,20 @@ https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWA
 </p>
 
 # ORION - Subscriptions
-O Orion Context Broker provê um recurso chamado subscrições, que consiste basicamente em notificar sua aplicação em uma determinada rota HTTP sempre que um atributo ou o resultado para um comando de algum dispositivo for atualizado, evitando assim que sua aplicação tenha que ficar de tempos em tempos verificando se um determinado dispositivo (sensor) publicou alguma nova medição ou um novo resultado para um comando (atuador). Essa aplicação foi implementada visando a utilização desse recurso, por isso, para seu correto funcionamento, é necessário registar (subsescrever) essa aplicação no ORION, assim, sempre que um determinado sensor ou atuador publicar uma atualização, a aplicação será notificada e irá consultar no ORION essas informações (medição ou resultado do comando) atualizadas.
+O Orion Context Broker provê um recurso chamado subscrições, que consiste basicamente em notificar sua aplicação em uma determinada rota HTTP sempre que um atributo ou o comando (resultado para o comando) de algum dispositivo for atualizado, evitando assim que sua aplicação tenha que ficar de tempos em tempos verificando se um determinado dispositivo publicou alguma atualização. No contexto dessa aplicação, após registar o sensor ultrasônico e o motor servo via interface web do WebSM, informando seus ids, assim como um atributo "distance" para armazenar a distância coletada pelo sensor ultrasônico e o comando "move" para armazenar o resultado do comando enviado pelo motor servo, sendo assim, sempre que algum desses dispositivos publicarem alguma atualização, a aplicação será notificada em uma rota HTTP definida para cada um desses dispositivos, consultado o valor atualizado do atributo (distance) do sensor ultrasônico, ao ser notificada pelo ORION na rota HTTP definida para o sensor ultrasônico, assim como o valor atualizado do comando (move) do motor servo, ao ser notificada pelo ORION na rota HTTP definida para o motor servo.
 
 ### Entidade de dados
-Dentro da plataforma FIWARE, Todo dispositivo é representando como uma entidade de dados, que é uma representação de algum objeto do mundo real.
+Dentro da plataforma FIWARE, todo dispositivo é representando como uma entidade de dados, que é uma representação de algum objeto físico ou conceitual do mundo real.
 
 ##### Exemplo da estrutura de um dispositivo dentro da plataforma FIWARE
 
 ```
 {
-     "device_id":   "sensor001",
-     "entity_name": "urn:ngsi-ld:Thing:001", //ID da entidade de dados
-     "entity_type": "Thing",
+     "device_id":   "sensor1s",
+     "entity_name": "urn:ngsi-ld:Thing:sensor1s", //ID da entidade de dados
+     "entity_type": "Thing", //Tipo
      "attributes": [
-       { "object_id": "c", "name": "count", "type": "Integer" }
+       { "object_id": "distance", "name": "distance", "type": "Double" }
      ]
    }
 
@@ -63,24 +63,55 @@ Dentro da plataforma FIWARE, Todo dispositivo é representando como uma entidade
 O nome da entidade e o tipo são preenchidos pelo SW4IoT_FIWARE_Manager no momento do cadastro do dispositivo feito via interface web do WebSM, por isso, essas informações não são solicitadas durante o processo de cadastro do dispositivo.
 
 Para subescrever a aplicação 
+
+Utilizando algum cliente HTTP como: [Postman](https://www.getpostman.com/) ou [Insomnia](https://insomnia.rest/download/)
+
+##### A aplicação será notificada pelo ORION sempre que o sensor ultrasônico publicar uma nova distância
 ```
-HTTP POST
-http://200.129.207.169:1026/v2/subscriptions
+Método: HTTP POST
+URL: http://IP_ORION:1026/v2/subscriptions
+Corpo da requisição:
 {
-  "description": "Notify me of all sensor distance changes",
+  "description": "Me notifique sempre que o sensor ultrasônico publicar um nova medição",
   "subject": {
     "entities":
      	[{
-				"idPattern": "urn:ngsi-ld:Thing:servomotor", i
-				"type": "Thing"
-			}],
+	   "idPattern": "urn:ngsi-ld:Thing:sensor1s", //Nome da entidade de dados correspondente ao sensor ultrasônico.
+           "type": "Thing"
+	}],
      "condition": {
-      "attrs": [ "mover_info" ] 
+      "attrs": [ "distance" ] //Sempre que esse atributo for atualizado a aplicação será notificada.
     }
   },
   "notification": {
     "http": {
-      "url": "http://200.129.207.169:5600/commandresult" //Rota na qual a aplicação será notificada.
+      "url": "http://IP_Aplicação:5600/measurementresult" //Rota na qual a aplicação será notificada.
+    }
+  }
+}
+```
+##### A aplicação será notificada pelo ORION sempre que o motor servo publicar um novo resultado para o comando
+```
+Método: HTTP POST
+URL: http://IP_ORION:1026/v2/subscriptions
+Corpo da requisição:
+{
+  "description": "Me notifique sempre que o motor servo publicar um novo resultado para o comando enviado",
+  "subject": {
+    "entities":
+     	[{
+	   "idPattern": "urn:ngsi-ld:Thing:servomotor", //Nome da entidade de dados correspondente ao dispositivo.
+           "type": "Thing"
+	}],
+     "condition": {
+      //nome_do_comando_info corresponde ao resultado do comando
+      //Sempre que esse comando for atualizado a aplicação será notificada.
+      "attrs": [ "mover_info" ]  
+    }
+  },
+  "notification": {
+    "http": {
+      "url": "http://IP_Aplicação:5600/commandresult" //Rota na qual a aplicação será notificada.
     }
   }
 }
