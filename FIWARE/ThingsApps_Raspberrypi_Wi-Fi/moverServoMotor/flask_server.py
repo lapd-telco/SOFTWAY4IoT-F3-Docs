@@ -6,7 +6,7 @@ app = Flask(__name__)
 raspberryIp = '0.0.0.0'
 
 #The IoT Agent will make a HTTP POST for this endpoint
-#The endpoint registered for the actuator device in WebSM
+# "/" Is the endpoint registered for the actuator device in WebSM
 @app.route("/", methods=['POST'])
 def commandExecution():
     #Function that activate the servo motor
