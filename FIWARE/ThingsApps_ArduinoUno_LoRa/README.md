@@ -8,6 +8,6 @@ Nesse repositório há 3 aplicações de exemplo para teste, sendo:
  [LoRa_Bidirecional_ArduinoUno_Servo_ULtrasonic](./LoRa_Bidirecional_ArduinoUno_Servo_ULtrasonic.ino)
 # Disposição dos componentes - Teste LoRa
 <p align="center">
-  <img src="../Images/Disposição_dos_Componentes-LoRa.png">
+  <img src="./Images/Disposição_dos_Componentes-LoRa.png">
 </p>
 
