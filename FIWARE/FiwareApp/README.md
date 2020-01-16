@@ -21,13 +21,13 @@ necessário alterar a propriedade image do arquivo YAML (FiwareApp.yaml) da apli
 Acesse a seção Slices e selecione o slice desejado.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/yaml1.png">
+  <img src="./Images/yaml1.png">
 </p>
 
 Na aba applications clique em + ADD.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/yaml2.png">
+  <img src="./Images/yaml2.png">
 </p>
 
 Insira a URL do arquivo YAML da aplicação e clique em SAVE.
@@ -38,7 +38,7 @@ URL obtida:
 https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/FiwareApp/FiwareApp.yaml
 ```
 <p align="center">
-  <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/yaml3.png">
+  <img src="./Images/yaml3.png">
 </p>
 
 # Orion - Subscriptions
