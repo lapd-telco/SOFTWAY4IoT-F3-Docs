@@ -6,9 +6,9 @@ Nesse repositório há 3 aplicações de exemplo para teste, sendo:
  [LoRa_Sender_ArduinoUno_Ultrasonic](./LoRa_Sender_ArduinoUno_Ultrasonic)
  * Uma aplicação que opera nos dois sentidos, mesclando as duas aplicações anteriores (Utilizada no teste final).</br>
  [LoRa_Bidirecional_ArduinoUno_Servo_ULtrasonic](./LoRa_Bidirecional_ArduinoUno_Servo_ULtrasonic.ino)
-# Exemplos utilizados como base no desenvolvimento da aplicação da interface LoRa do gateway
- * Uma aplicação que atua como LoRa Sender (Heltec esp32).
- * Um aplicação que atua como LoRa Receiver (Heltec esp32).
+# Exemplos utilizados como base no desenvolvimento da aplicação da interface LoRa do gateway (Heltec esp32)
+ * Uma aplicação que atua como LoRa Sender
+ * Um aplicação que atua como LoRa Receiver
 ### A Aplicação da interface LoRa do gateway pode ser encontrada em:
  SOFTWAY4IoT-F3-Drivers/gateway/codigo_gw.py
 # Disposição dos componentes - Teste LoRa
