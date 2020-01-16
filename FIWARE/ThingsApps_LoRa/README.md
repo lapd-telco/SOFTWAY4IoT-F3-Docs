@@ -1,7 +1,8 @@
 # Aplicações de exemplo - Arduino Uno + Shield Lora (Dragino) 
-Nesse repositório há duas simples aplicações de exemplo, as quais foram desenvolvidas para teste: 
- * Uma aplicação que ativa um motor servo ao receber uma requisição de comando proveniente do IoT Agent
- * Uma aplicação que envia as medições coletadas por um sensor ultrasônico ao IoT Agent
+Nesse repositório há 5 aplicações de exemplo, as quais foram desenvolvidas para teste, sendo:
+ * Uma aplicação que ativa um motor servo ao receber um pacote LoRa gerado da interface LoRa do gateway (Heltec Esp32).
+ * Uma aplicação que envia através de um pacote LoRa as medições coletadas por um sensor ultrasônico, sendo esse pacote interceptado pela interface LoRa do gateway (Heltec Esp32). 
+ * Uma aplicação que opera nos dois sentidos, mesclando as duas aplicações anteriores.
 
 # Disposição dos componentes - Teste LoRa
 <p align="center">
