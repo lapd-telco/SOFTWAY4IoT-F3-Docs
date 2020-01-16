@@ -10,7 +10,7 @@ Nesse repositório há 3 aplicações de exemplo para teste, sendo:
  * Uma aplicação que atua como LoRa Sender (Heltec esp32).
  * Um aplicação que atua como LoRa Receiver (Heltec esp32).
 ### A Aplicação da interface LoRa do gateway pode ser encontrada em:
- SOFTWAY4IoT-F3-Drivers/gateway/codigo_gw.txt
+ SOFTWAY4IoT-F3-Drivers/gateway/codigo_gw.py
 # Disposição dos componentes - Teste LoRa
 <p align="center">
   <img src="../Images/Disposição_dos_Componentes-LoRa.png">
