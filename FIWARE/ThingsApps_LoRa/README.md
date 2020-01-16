@@ -4,3 +4,7 @@ Nesse repositório há duas simples aplicações de exemplo, as quais foram dese
  * Uma aplicação que envia as medições coletadas por um sensor ultrasônico ao IoT Agent
 
 # Disposição dos componentes - Teste LoRa
+<p align="center">
+  <img src="./Images/Disposição_dos_Componentes-LoRa.png">
+</p>
+
