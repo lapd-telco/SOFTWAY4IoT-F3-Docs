@@ -13,7 +13,7 @@ Nesse repositório há 3 aplicações de exemplo para teste, sendo:
 A aplicação da interface LoRa do gateway atua nos dois sentidos, tando no recebimento de pacotes LoRa, quanto no envio. 
 </br>
 </br>
-A aplicação da interface LoRa do gateway pode ser encontrada em: 
+Pode ser encontrada em: 
 ```
 SOFTWAY4IoT-F3-Drivers/gateway/codigo_gw.ino
 ```
