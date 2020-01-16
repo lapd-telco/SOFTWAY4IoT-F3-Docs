@@ -3,9 +3,9 @@ Nesse repositório há 3 aplicações de exemplo para teste, sendo:
  * Uma aplicação que ativa um motor servo ao receber um pacote LoRa gerado pela interface LoRa do gateway (Heltec Esp32).
     
  * Uma aplicação que envia através de um pacote LoRa as medições coletadas por um sensor ultrasônico, sendo esse pacote interceptado pela interface LoRa do gateway (Heltec Esp32). 
- 
+ [LoRa_Receiver_ArduinoUno_Servo](./)
  * Uma aplicação que opera nos dois sentidos, mesclando as duas aplicações anteriores (Utilizada no teste final).
- [LoRa_Bidirecional_ArduinoUno_Servo_ULtrasonic](https://github.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/tree/master/FIWARE/ThingsApps_LoRa/LoRa_Bidirecional_ArduinoUno_Servo_ULtrasonic.ino)
+ [LoRa_Bidirecional_ArduinoUno_Servo_ULtrasonic](./LoRa_Bidirecional_ArduinoUno_Servo_ULtrasonic.ino)
 # Exemplos utilizados como base no desenvolvimento das aplicações acima 
  * Uma aplicação que atua como LoRa Sender (Utilizado como base para a aplicação do sensor ultrasônico).
  * Um aplicação que atua como LoRa Receiver (Utilizada com base para a aplicação do motor servo).
