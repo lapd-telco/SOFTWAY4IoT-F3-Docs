@@ -5,6 +5,6 @@ Nesse repositório há duas simples aplicações de exemplo, as quais foram dese
 
 # Disposição dos componentes - Teste LoRa
 <p align="center">
-  <img src="./Images/Disposição_dos_Componentes-LoRa.png">
+  <img src="../Images/Disposição_dos_Componentes-LoRa.png">
 </p>
 
