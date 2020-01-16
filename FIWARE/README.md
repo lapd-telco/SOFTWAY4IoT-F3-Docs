@@ -76,7 +76,7 @@ O fluxo é iniciado com o envio de uma requisição de atualização (updateCont
 
 ### Envio de comandos para dispositivos IoT em comunicação direta com o IoT Agent (Wi-FI ou Ethernet)
 <p align="center">
-  <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/FluxoComandos%5BIoTAgent%5D.png">
+  <img src="./Images/FluxoComandos%5BIoTAgent%5D.png">
 </p>
 
 ### Figura 2 – Fluxo de envio de comando a um atuador em comunicação direta com o IoT Agent.
@@ -85,7 +85,7 @@ Após o IoT Agent obter os dados necessárias para o envio do comando, ele reali
 
 ### Envio de comandos para dispositivos IoT por meio da devicesApp e do driver (LoRa, Zigbee, nRF24)
 <p align="center">
-  <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/FluxoComandos%5BDrivers%5D.png">
+  <img src="./Images/FluxoComandos%5BDrivers%5D.png">
 </p>
 
 ### Figura 3 – Fluxo de envio de comando a um atuador por meio da devicesApp e do driver.
@@ -102,7 +102,7 @@ Originalmente na plataforma FIWARE, uma aplicação que gerencia um sensor obter
 ```
 ### Envio de medições de dispositivos IoT em comunicação direta com o IoT Agent (Wi-FI ou Ethernet)
 <p align="center">
-  <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/FluxoMedi%C3%A7%C3%B5es%5BIoTAgent%5D.png">
+  <img src="./Images/FluxoMedi%C3%A7%C3%B5es%5BIoTAgent%5D.png">
 </p>
 
 ### Figura 4 – Fluxo de envio de medições de um sensor em comunicação direta com o IoT Agent.
@@ -122,7 +122,7 @@ Corpo da requisição
 ### Envio de medições de dispositivos IoT por meio da devicesApp e do driver (LoRa, Zigbee, nRF24)
 Na integração entre FIWARE e SOFTWAY4IoT, a devicesApp atuará como uma aplicação, recebendo os dados de leitura de um sensor através de seu respectivo driver e os encaminhando ao IoT Agent através de uma requisição HTTP POST.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/LABORA-INF-UFG/SOFTWAY4IoT-F3-Docs/master/FIWARE/Images/FluxoMedi%C3%A7%C3%B5es%5BDrivers%5D.png">
+  <img src="./Images/FluxoMedi%C3%A7%C3%B5es%5BDrivers%5D.png">
 </p>
 
 ### Figura 5 – Fluxo de envio de medição de um sensor.
