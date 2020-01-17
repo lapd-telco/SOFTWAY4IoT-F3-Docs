@@ -4,7 +4,7 @@ Nesse repositório há duas simples aplicações de exemplo, as quais foram dese
  * Uma aplicação que envia as medições coletadas por um sensor ultrasônico ao IoT Agent
 
 # Disposição dos componentes - Teste Wi-Fi
-![](/FIWARE/ThingsApps_Raspberrypi_Wi-Fi/images/Disposição_dos_Componentes-WiFi.jpg)
+![](/FIWARE/ThingsApps_RaspberryPi_Wi-Fi/images/Disposição_dos_Componentes-WiFi.jpg)
 # Conexão física 
 Conexão de rede
 # Conexão virtual
